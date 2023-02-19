@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const upload = require("./multer");
-const path = require('path');
 
 app.set("view engine", "ejs");
 
