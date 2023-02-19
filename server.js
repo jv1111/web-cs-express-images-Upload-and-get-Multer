@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const upload = require("./multer");
 const path = require('path');
-const fs = require('fs');
 
 app.set("view engine", "ejs");
 
@@ -18,6 +17,7 @@ app.post("/upload", upload.single('image'), (req, res) => {
     res.send("Image uploaded");
 });
 
+// images is the created directory where images is stored
 app.use(express.static('images'));
 app.get('/getImage', (req, res) => {
     const image = '/myPic.png';
