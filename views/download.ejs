@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Retrieval Example</title>
+</head>
+
+<body>
+    <img id="profileImg" src="" alt="My Image" />
+    <script>
+        fetch('http://localhost:3001/getImage')
+            .then(response => response.json())
+            .then(data => {
+                const image = document.getElementById('profileImg');
+                image.setAttribute('src', 'http://localhost:3001/myPic.png')
+            });
+    </script>
+</body>
+
+</html>
